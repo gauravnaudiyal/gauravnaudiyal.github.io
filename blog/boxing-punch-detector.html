@@ -23,17 +23,19 @@
       <article>
         <p class="date">March 2026</p>
         <h1>Boxing Puncher Detector</h1>
-        <p class="lead">A side project that detects boxing stance and classifies punch candidates using MediaPipe and OpenCV.</p>
-        <h2>Overview</h2>
-        <p>I box, so this one was personal. The idea came from Jabbr — I wanted to see if I could build something that detects whether someone is in a boxing stance and flags a potential punch using pose estimation. Built in Python with MediaPipe and OpenCV.</p>
+        <p class="lead">A side project that detects boxing stance and flags punch candidates using MediaPipe and OpenCV.</p>
+        <h2>What it is</h2>
+        <p>I box, so this one came from an actual hobby rather than a class assignment. I got the idea from an app called Jabbr and wanted to see if I could build something similar myself. It uses pose detection to figure out if someone's in a boxing stance and whether a movement looks like a punch.</p>
         <h2>What I worked on</h2>
         <ul>
-          <li>Used MediaPipe for real-time pose landmark detection</li>
-          <li>Built logic to classify stance and punch candidates from keypoint positions</li>
-          <li>Tested on live webcam input and recorded footage</li>
+          <li>Used MediaPipe to track body pose in real time from webcam input</li>
+          <li>Wrote logic to classify stance and detect punch candidates from the keypoints</li>
+          <li>Tested it on live footage of myself training to see how accurate it was</li>
         </ul>
-        <h2>GitHub</h2>
-        <p><a href="https://github.com/gauravnaudiyal/boxing_puncher_detector">View the repo</a></p>
+        <h2>What I learned</h2>
+        <p>Pose detection libraries handle a lot of the hard work, but turning raw keypoints into something meaningful like "that's a jab" takes a lot of trial and error.</p>
+        <h2>Repo</h2>
+        <p><a href="https://github.com/gauravnaudiyal/boxing_puncher_detector">github.com/gauravnaudiyal/boxing_puncher_detector</a></p>
       </article>
     </div>
   </main>

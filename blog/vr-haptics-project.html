@@ -4,47 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VR Haptics Project | Gaurav Naudiyal</title>
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="/">Gaurav Naudiyal</a>
+      <a class="brand" href="../index.html">Gaurav Naudiyal</a>
       <nav class="nav-links">
-        <a href="/index.html">Home</a>
-        <a href="/projects.html">Projects</a>
-        <a href="/blog.html">Blog</a>
-        <a href="/contact.html">Contact</a>
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../contact.html">Contact</a>
       </nav>
     </div>
   </header>
-
   <main class="post-layout">
     <div class="container">
       <article>
-        <p class="kicker">Project note</p>
+        <p class="date">Summer 2026</p>
         <h1>VR Haptics Project</h1>
-        <p class="lead">Exploring tactile feedback and interaction design in VR.</p>
-
-        <h2>Overview</h2>
-        <p>This is my dissertation project, built in Unity with the bHaptics SDK to test how tactile feedback changes the way people experience a VR scene.</p>
-
+        <p class="lead">This is my dissertation project, testing how haptic feedback changes the way people feel presence in VR.</p>
+        <h2>What it is</h2>
+        <p>I built a VR simulation in Unity and connected it to bHaptics hardware so users get physical feedback while doing tasks in the headset. The main question I'm trying to answer is whether adding haptics actually makes a scene feel more real, or if it just adds noise.</p>
         <h2>What I worked on</h2>
         <ul>
-          <li>Designed interaction flow in Unity</li>
-          <li>Integrated haptic feedback patterns tied to in-scene events</li>
-          <li>Ran early tests to see how feedback timing changes immersion</li>
+          <li>Set up the VR scene in Unity and got it running on Quest</li>
+          <li>Integrated the bHaptics SDK and mapped feedback patterns to in game events</li>
+          <li>Ran early tests with a few users to see how they reacted to different feedback timing</li>
         </ul>
-
-        <h2>Next</h2>
-        <p>I plan to add findings and a proper write-up once testing wraps up.</p>
+        <h2>What I'm still figuring out</h2>
+        <p>The tricky part is timing. If the haptic feedback fires slightly late it feels disconnected from what's happening on screen. I'm still tuning this before the final round of testing.</p>
+        <h2>Repo</h2>
+        <p><a href="https://github.com/gauravnaudiyal/vr_haptics_project">github.com/gauravnaudiyal/vr_haptics_project</a></p>
       </article>
     </div>
   </main>
-
   <footer class="site-footer">
     <div class="container"><p>Built and hosted on GitHub Pages.</p></div>
   </footer>
-  <script src="/assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
