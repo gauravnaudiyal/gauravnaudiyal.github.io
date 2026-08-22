@@ -1,179 +1,195 @@
 :root {
-  --bg: #111111;
-  --surface: #181818;
-  --text: #f5ecd9;
-  --muted: #c8bea9;
-  --border: #2d2a24;
-  --max-width: 1080px;
-  --radius: 18px;
-  --transition: 220ms ease;
+  --bg: #f5efdc;
+  --text: #1a1a1a;
+  --muted: #5c5648;
+  --max-width: 720px;
+  --transition: 180ms ease;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: Inter, Arial, sans-serif;
+  font-family: Georgia, "Times New Roman", serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.65;
+  font-size: 18px;
 }
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--muted);
+  transition: color var(--transition);
+}
+
+a:hover { color: var(--muted); }
+
 img { max-width: 100%; display: block; }
 
 .container {
-  width: min(var(--max-width), calc(100% - 2rem));
+  width: min(var(--max-width), calc(100% - 2.5rem));
   margin: 0 auto;
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(10px);
-  background: rgba(17, 17, 17, 0.88);
-  border-bottom: 1px solid var(--border);
+  padding: 2rem 0 1rem;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  min-height: 72px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .brand {
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.nav-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+}
 
-.nav-links a,
-.text-link {
+.nav-links a {
+  text-decoration: none;
   color: var(--muted);
-  transition: color var(--transition);
 }
 
 .nav-links a:hover,
-.nav-links a.active,
-.text-link:hover { color: var(--text); }
+.nav-links a.active {
+  color: var(--text);
+  text-decoration: underline;
+}
 
-.hero { padding: 7rem 0 4rem; }
+h1, h2, h3, p { margin: 0 0 1rem; }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 0.9fr;
-  gap: 2rem;
-  align-items: end;
+h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-top: 2.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
 }
 
 .kicker {
   color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
 }
 
-h1, h2, h3, p { margin-top: 0; }
-
-h1 {
-  font-size: clamp(2.4rem, 6vw, 4.8rem);
-  line-height: 0.98;
-  max-width: 10ch;
-  margin-bottom: 1rem;
+.lead {
+  color: var(--muted);
+  max-width: 60ch;
 }
 
-.lead { max-width: 54ch; color: var(--muted); font-size: 1.05rem; }
-
-.hero-note,
-.panel,
-.card,
-.post-card,
-.contact-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+.section {
+  padding: 1.2rem 0;
 }
-
-.hero-note, .panel, .contact-card { padding: 1.4rem; }
-
-.section { padding: 1.5rem 0 4rem; }
 
 .section-head {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: end;
+  align-items: baseline;
+  gap: 0.6rem;
   margin-bottom: 1.5rem;
+  flex-wrap: wrap;
 }
 
-.section-head p { color: var(--muted); max-width: 48ch; }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
-}
-
-.card, .post-card {
-  overflow: hidden;
-  transition: border-color var(--transition), transform var(--transition), opacity 300ms ease;
-}
-
-.card:hover, .post-card:hover {
-  border-color: #4b4439;
-  transform: translateY(-3px);
-}
-
-.thumb {
-  aspect-ratio: 16 / 10;
-  background: linear-gradient(135deg, #27231c, #171717);
-  border-bottom: 1px solid var(--border);
-}
-
-.card-body, .post-card-body { padding: 1.1rem; }
-
-.meta { color: var(--muted); font-size: 0.92rem; }
-
-.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
-
-.tags span {
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.3rem 0.7rem;
+.section-head p {
   color: var(--muted);
-  font-size: 0.84rem;
+  margin: 0;
+}
+.list {
+  display: block;
 }
 
-.stack { display: grid; gap: 1rem; }
+.entry {
+  padding: 1.2rem 0;
+  border-top: 1px solid #d8cfb2;
+}
 
-.post-layout { padding: 4.5rem 0; }
-.post-layout article { max-width: 760px; }
-.post-layout h1 { max-width: 100%; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; }
-.post-layout h2 { margin-top: 2.5rem; margin-bottom: 0.8rem; }
-.post-layout p, .post-layout li { color: var(--muted); }
-.post-layout ul { padding-left: 1.1rem; }
+.entry:first-child {
+  border-top: none;
+}
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
+.entry a {
+  text-decoration: none;
+}
+
+.entry a:hover h3 {
+  text-decoration: underline;
+}
+
+.entry .data {
+    color:var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+}
+.meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.tags {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.post-layout {
+  padding: 3rem 0;
+}
+
+.post-layout article {
+  max-width: 60ch;
+}
+
+.post-layout ul {
+  padding-left: 1.2rem;
+  color: var(--text);
+}
+
+.contact-list {
+  padding: 0;
+}
+
+.contact-list .entry {
+  border-top: none;
+  padding: 0.4rem 0;
 }
 
 .site-footer {
-  border-top: 1px solid var(--border);
-  padding: 1.5rem 0 3rem;
+  padding: 2rem 0 3rem;
   color: var(--muted);
+  font-size: 0.9rem;
 }
 
-.reveal { opacity: 0; transform: translateY(14px); }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
 
-@media (max-width: 800px) {
-  .hero-grid, .grid, .contact-grid { grid-template-columns: 1fr; }
-  .nav { align-items: flex-start; flex-direction: column; gap: 0.9rem; padding: 1rem 0; }
-  h1 { max-width: 100%; }
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
